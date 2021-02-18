@@ -1,39 +1,266 @@
 /***** CSS RESET *****/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 /**********************/
 
-.navbar_top{
+
+/* Navbar  */
+.navbar_top {
     position: fixed;
-    height: 150px;
-    width: 100% ;
-    background-color: rgba(0,0,0,0.3);
+    height: 100px;
+    width: calc(100% - 300px);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 200;
     right: 0;
     top: 0;
+    text-align: right;
 }
-main{
+
+.navbar_top>button {
+    margin-right: 50px;
+    margin-top: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    background-color: transparent;
+    text-align: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.navbar_top button:hover {
+    color: #fff;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+main {
     height: calc(100vh - 100px);
     background-color: aqua;
     display: flex;
 }
 
-.content{
-    overflow-y: scroll;
+.content {
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
     width: calc(100% - 300px);
-    background-color: cornflowerblue;
+    background-color: #141922;
+    padding: 20px;
+    align-content: flex-start;
+
 }
-aside{
+
+/* Navbar content */
+.navbar_content {
+    text-transform: uppercase;
+    margin-top: 80px;
+    height: 50px;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navbar_content ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_content li {
+    margin: 20px 10px;
+    display: inline-block;
+}
+
+.navbar_content li:hover a {
+    color: #fff;
+}
+
+.navbar_content li:active::after {
+    content: '';
+    display: block;
+    background-color: #adff2f;
+    width: 30px;
+    height: 3px;
+    margin: 2px auto;
+}
+
+.navbar_content a {
+    color: #a3a3a3;
+    text-decoration: none;
+}
+
+/* /Navbar content */
+
+.section {
+    color: #fff;
+    width: 100%
+}
+
+.section>p {
+    width: 100%;
+    color: #a3a3a3;
+}
+
+/* Recently played */
+
+.recently_played>h2 {
+    width: 100%;
+    text-align: left;
+}
+
+/* Song cards */
+.songs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.song_card {
+    text-align: center;
+    flex-basis: calc((100% / 6) - 40px);
+    color: #fff;
+    margin: 0 20px;
+}
+
+.cover {
+    position: relative;
+    width: 100%;
+}
+
+.cover>img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.cover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /*tmp*/
+    width: 100%;
+    /*tmp*/
+}
+
+.cover:hover .play {
+    visibility: visible;
+}
+
+.play {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    color: #fff;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.cover:hover::after {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.song_card>h3 {
+    margin-top: 10px;
+}
+
+.song_card>h4 {
+    color: #a3a3a3;
+    margin-top: 10px;
+}
+
+/* /Song cards */
+
+
+/* Popular songs */
+.popular_songs .cover>img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+.popular_songs .cover::after {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/* /Popular songs */
+
+
+aside {
     width: 300px;
     height: 100%;
     background-color: #000;
 }
 
-footer{
+footer {
     width: 100%;
     height: 100px;
-    background-color: coral;
+    background-color: #282828;
+}
+
+
+/* Responsive */
+
+/* LG */
+@media (max-width: 1200px) {
+    .song_card {
+        flex-basis: calc((100% / 4) - 40px);
+    }
+}
+
+/* MD */
+@media (max-width: 991px) {
+    .song_card {
+        flex-basis: calc((100% / 4) - 40px);
+    }
+}
+
+/* XS*/
+@media (max-width: 767px) {
+    .song_card {
+        flex-basis: calc((100% / 2) - 40px);
+    }
+
+    aside {
+        width: 50px;
+    }
+
+    .content {
+        width: calc(100% - 50px);
+    }
+
+    .navbar_top {
+
+        width: calc(100% - 50px);
+
+    }
 }
