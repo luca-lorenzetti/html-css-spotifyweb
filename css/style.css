@@ -229,6 +229,7 @@ main {
 /* Aside */
 
 aside {
+    overflow: hidden;
     height: 100%;
     width: 300px;
     background-color: #000;
@@ -244,10 +245,12 @@ aside {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    align-items: flex-start;
 }
 .bottom_aside{
     flex:1;
-    
+    width: 90%;
+    padding-left: 15px;
 }
 #logo{
     width: 100%;
@@ -275,14 +278,15 @@ aside nav > ul{
     position: relative;
 }
 
-aside nav li:active{
+aside li:active{
     border-left: 2px solid #adff2f;
 }
-aside nav li > a:active{
-    margin-left: 23px;
+aside li > a:active{
+    margin-left: -2px;
 }
 aside li{
     padding-bottom: 15px;
+    padding-left: 25px; 
     display: flex;
     align-items: center;
 }
@@ -292,9 +296,6 @@ aside li:hover a{
     fill: #fff;
 }
 
-aside a:not(.crea_playlist a){
-    margin-left: 25px;
-}
 aside li > a{
     display: flex;
     align-items: center;
@@ -304,28 +305,26 @@ aside li > a{
     font-size: 14px;
 }
 
-aside li > a >svg{
+aside a > svg{
     width: 30px;
     fill: #bbb;
-    margin-left: 10px;
 }
-aside li > a >span{
+aside a > span{
     margin-left: 3px;
 }
 
 
 /* Crea Playlist */
-
 .crea_playlist{
     display: flex;
     flex-direction: column;
     color: #666666;
     overflow-x: auto;
     max-height: 100%;
+    padding-left: 25px; 
 }
-.crea_playlist > *{
-    margin-left: 35px;
-
+.crea_playlist li{
+    padding-left: 0px; 
 }
 .crea_playlist > h3{
     color: #fff;
@@ -355,10 +354,8 @@ aside li > a >span{
     margin-right: 5px;
 }
 
-
-
 .app_box{
-    border-bottom: 2px solid #6666;
+    border-bottom: 3px solid #6666;
     padding-bottom: 10px;
     height: 90%;
     display: flex;
@@ -384,18 +381,15 @@ aside li > a >span{
     margin-right: 10px;
 }
 
-
 .user_box{
     display: flex;
     color: #fff;
     fill: #fff;
-    padding: 12px;
     align-items: center;
+    margin-top: 10px;
 }
 .user_box > svg{
     flex-basis: 25px;
-    padding: 2px;
-    margin-left: 10px;
     margin-right: 10px;
     background-color: #666666;
     border-radius: 50%;;
@@ -411,6 +405,7 @@ aside li > a >span{
 footer {
     width: 100%;
     height: 100px;
+    overflow-x: hidden;
     background-color: #282828;
     color: #fff;
     display: flex;
@@ -420,7 +415,6 @@ footer {
 }
 
 .song_played_footer {
-    width: 350px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -482,11 +476,6 @@ footer {
     min-width: 50%;
     text-align: center;
     padding: 5px 10px;
-    transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -ms-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -606,6 +595,15 @@ label {
 
 .time_line {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+output{
+    order: -1;
+}
+label{
+    order: 1;
 }
 
 .media_buttons a:hover i {
@@ -616,33 +614,19 @@ label {
     -o-transform: scale(1.2);
 }
 
-.media_player_footer .media_buttons,
-.media_player_footer label {
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-}
-
-.media_player_footer label,
-.media_player_footer input,
-.media_player_footer output {
-    display: inline-block;
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-}
-
 .media_player_footer output,
 .media_player_footer label {
-    width: 8%;
+    width: 6%;
+    margin-bottom: 5px;
 }
-
+.media_player_footer output{
+    margin-right: 10px;
+}
+.media_player_footer label {
+    margin-left: 10px;
+}
 .media_player_footer input {
-    width: 50%;
+    width: 60%;
 }
 
 input[type=range]::-webkit-progress-bar {
@@ -672,9 +656,6 @@ input[type=range]::-webkit-progress-bar {
 .right_footer>input {
     width: 45%;
 }
-
-
-
 
 /* Responsive */
 
@@ -706,20 +687,32 @@ input[type=range]::-webkit-progress-bar {
     #logo > img:last-child{ 
         display: block;
         margin: 0px auto;
-        width: 80%;
+        width: 25px;
     }
     aside {
         width: 50px;
+        padding: 0;
+    }
+    .top_aside nav{
+        margin-top: -25px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    aside li{
+        padding-left: 0;
+        width: 100%;
+        margin: 0 auto;
     }
     aside li:active{
         border: none !important;
         margin-left: 0px !important;
     }
-    aside li > a >svg {
+    aside a > svg {
         width: 20px;
-        margin-left: -25px !important; /* tmp*/
     }
-    aside li > a > span{
+    aside a > span{
         display: none;
     }
     .crea_playlist{
@@ -730,9 +723,7 @@ input[type=range]::-webkit-progress-bar {
     }
 
     .navbar_top {
-
         width: calc(100% - 50px);
-
     }
 
     .app_box ,
@@ -743,17 +734,16 @@ input[type=range]::-webkit-progress-bar {
         margin-top: 20px;
     }
     .app_box a{
-        margin: 0 !important ;
         width: 100%;
     }
     .app_box span,
     .user_box span{
         display: none;
     }
-    .app_box svg,
-    .user_box svg{
-        margin: 0 auto !important;
 
+    .right_footer>a {
+        margin: 0 5px;
+        color: #fff;
     }
 }
 
