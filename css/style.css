@@ -239,12 +239,13 @@ aside {
     flex-direction: column;
     overflow: hidden;
     align-items: flex-start;
+    flex: 3;
 }
 
 .bottom_aside {
-    flex: 1;
     width: 90%;
     margin-bottom: 15px;
+    flex: 1;
 }
 
 #logo {
@@ -369,7 +370,6 @@ aside a>span {
 
 .app_box {
     border-bottom: 3px solid #6666;
-    padding-bottom: 10px;
     height: 90%;
     display: flex;
     justify-content: flex-start;
@@ -409,7 +409,6 @@ aside a>span {
     margin-right: 10px;
     background-color: #666666;
     border-radius: 50%;
-    ;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -719,9 +718,13 @@ input[type=range]::-webkit-progress-bar {
         align-items: center;
     }
 
+    .top_aside{
+        flex: 1;
+    }
     .bottom_aside {
+        flex: 1;
         padding-left: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
     }
 
     aside li {
