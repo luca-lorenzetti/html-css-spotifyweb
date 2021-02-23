@@ -731,12 +731,23 @@ i[class*="fa-play-circle"] {
         width: 100%;
         display: block;
     }
-
     .app_box span,
     .user_box span {
         display: none;
     }
-
+    .media_buttons > a{
+        font-size: 12px;
+        margin: 5px
+    }
+    .media_player_footer span{
+        font-size: 14px;
+    }
+    .song_played_footer{
+        width: 180px;
+    }
+    .right_footer{
+        margin: 0;
+    }
     .right_footer>a {
         margin: 0 5px;
         color: #fff;
