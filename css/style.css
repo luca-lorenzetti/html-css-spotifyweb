@@ -4,8 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /**********************/
+
+/* UTILITIES */
+
+
+.color_primary{
+    color: #666666;
+    fill: #666666;
+}
+.bg_grey{
+    background-color: #666666;
+}
+.display_flex{
+    display: flex;
+}
+
+.flex_direction_column{
+    flex-direction: column;
+}
+.flex_wrap{
+    flex-wrap: wrap;
+}
+
+/*********************/
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
@@ -53,6 +75,7 @@ body {
 
 .navbar_top button:hover {
     color: #fff;
+    cursor: pointer;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -63,14 +86,11 @@ body {
 main {
     height: calc(100vh - 110px);
     width: 100%;
-    display: flex;
 }
 
 /* Content */
 .content {
     overflow: auto;
-    display: flex;
-    flex-wrap: wrap;
     width: calc(100% - 300px);
     height: 100%;
     background-color: #141922;
@@ -83,15 +103,12 @@ main {
     text-transform: uppercase;
     padding-top: 80px;
     flex-basis: 100%;
-    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
 .navbar_content ul {
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .navbar_content li {
@@ -134,8 +151,6 @@ main {
 
 /* Song cards */
 .songs {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
     margin: 30px 0;
@@ -150,6 +165,8 @@ main {
 
 .cover {
     position: relative;
+    cursor: pointer;
+
 }
 
 .cover>img {
@@ -227,8 +244,6 @@ aside {
     height: 100%;
     width: 300px;
     background-color: #000;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     flex-shrink: 1;
     justify-content: space-between;
@@ -236,8 +251,6 @@ aside {
 }
 
 .top_aside {
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
     align-items: flex-start;
     flex: 3;
@@ -268,11 +281,6 @@ aside>* {
     width: 100%
 }
 
-aside nav {
-    display: flex;
-    flex-direction: column;
-}
-
 aside nav>ul {
     margin-left: 4px;
     margin-top: 40px;
@@ -290,7 +298,6 @@ aside li>a:active {
 aside li {
     padding-bottom: 15px;
     padding-left: 25px;
-    display: flex;
     align-items: center;
 }
 
@@ -301,9 +308,7 @@ aside li:hover a {
 }
 
 aside li>a {
-    display: flex;
     align-items: center;
-    color: #666666;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
@@ -321,9 +326,6 @@ aside a>span {
 
 /* Crea Playlist */
 .crea_playlist {
-    display: flex;
-    flex-direction: column;
-    color: #666666;
     overflow-y: auto;
     height: 100%;
     padding-left: 25px;
@@ -352,10 +354,8 @@ aside a>span {
 }
 
 .plus_icon_and_text>a {
-    display: flex;
     align-items: center;
     align-content: center;
-    color: #666666;
     text-decoration: none;
 }
 
@@ -373,19 +373,16 @@ aside a>span {
 .app_box {
     border-bottom: 3px solid #6666;
     height: 90%;
-    display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    padding-bottom: 10px;
 }
 
 .app_box>a {
-    display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-basis: 100%;
     text-decoration: none;
-    color: #666666;
-    fill: #666666;
 }
 
 .app_box>a:hover>* {
@@ -409,7 +406,6 @@ aside a>span {
 .user_box>svg {
     flex-basis: 25px;
     margin-right: 10px;
-    background-color: #666666;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -426,7 +422,6 @@ footer {
     overflow-x: hidden;
     background-color: #282828;
     color: #fff;
-    display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 15px;
@@ -434,7 +429,6 @@ footer {
 
 .song_played_footer {
     height: 100%;
-    display: flex;
     align-items: center;
     justify-content: flex-start;
 }
@@ -447,7 +441,6 @@ footer {
 .song_title>p {
     font-size: 12px;
     width: 100%;
-
 }
 
 .song_title>p>a:hover {
@@ -470,10 +463,8 @@ footer {
     height: 100%;
     padding-top: 5px;
     font-size: 25px;
-    display: flex;
     align-items: center;
     align-content: center;
-    flex-wrap: wrap;
     margin-left: 20px;
 }
 
@@ -492,9 +483,7 @@ footer {
     min-width: 50%;
     text-align: center;
     padding: 5px 10px;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 
 i[class*="fa-play-circle"] {
@@ -504,7 +493,6 @@ i[class*="fa-play-circle"] {
 
 
 .media_buttons {
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
@@ -524,6 +512,13 @@ i[class*="fa-play-circle"] {
     width: 100%;
     justify-content: center;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+.slider:hover .inner_time_line{
+    background-color: #adff2f;
+}
+.slider:hover .pointer{
+    visibility: visible;
 }
 /* Slider volume */
 .right_footer .slider{
@@ -535,25 +530,34 @@ i[class*="fa-play-circle"] {
 }
 .right_footer .pointer{
     left: 20%;
+    height: 15px;
+    width: 15px;
+    top: -6px;
 }
 /* /Slider volume */
 
 .time_line{
     width: 80%;
-    height: 6px;
-    background-color: #666666;
+    height: 4px;
     position: relative;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .inner_time_line{
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     background-color: #bbbbbbbb;
     width: 10%;
     height: 100%;
 }
-.inner_time_line:hover,
-.pointer:hover .inner_time_line{
-    background-color: #adff2f;
-}
+
 
 .time_line:hover .pointer{
     visibility: visible;
@@ -562,7 +566,7 @@ i[class*="fa-play-circle"] {
     position: absolute;
     visibility: hidden;
     left: calc( 10% - 10px);
-    top: -6px;
+    top: -8px;
     height: 20px;
     width: 20px;
     background-color: #bbbbbb;
@@ -609,9 +613,7 @@ i[class*="fa-play-circle"] {
 .right_footer {
     width: 350px;
     height: 100%;
-    display: flex;
     margin-left: 10px;
-    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
 }
@@ -672,8 +674,7 @@ i[class*="fa-play-circle"] {
 
     .top_aside nav {
         margin-top: -25px;
-        display: flex;
-        flex-direction: column;
+
         width: 100%;
         align-items: center;
     }
@@ -728,6 +729,7 @@ i[class*="fa-play-circle"] {
 
     .app_box a {
         width: 100%;
+        display: block;
     }
 
     .app_box span,
