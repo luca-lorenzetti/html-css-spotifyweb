@@ -552,9 +552,8 @@ i[class*="fa-play-circle"] {
 .inner_time_line:hover,
 .pointer:hover .inner_time_line{
     background-color: #adff2f;
-}{
-    background-color: #adff2f;
 }
+
 .time_line:hover .pointer{
     visibility: visible;
 }
