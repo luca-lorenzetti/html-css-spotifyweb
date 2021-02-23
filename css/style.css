@@ -740,9 +740,13 @@ i[class*="fa-play-circle"] {
         color: #fff;
     }
 }
-
+@media (max-height: 210px) {
+    .navbar_top
+    {
+        display: none;
+    }
+}
 @media (max-height: 120px) {
-        .navbar_top,
         .content,
         aside
         {
