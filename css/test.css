@@ -1,0 +1,45 @@
+
+
+.time_line{
+    width: 50%;
+    height: 6px;
+    background-color: #666666;
+    position: relative;
+}
+
+.inner_time_line{
+    background-color: red;
+    width: 10%;
+    height: 100%;
+}
+
+.pointer{
+    position: absolute;
+    left: calc( 10% - 10px);
+    top: -6px;
+    height: 20px;
+    width: 20px;
+    background-color: grey;
+    border-radius: 50%;;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.time_line:active .pointer{
+    left: calc( 100% - 10px);
+    transition: left 5s;
+    -webkit-transition: left 5s;
+    -moz-transition: left 5s;
+    -ms-transition: left 5s;
+    -o-transition: left 5s;
+}
+.time_line:active .inner_time_line{
+    width: 100%;
+    transition: width 5s;
+    -webkit-transition: width 5s;
+    -moz-transition: width 5s;
+    -ms-transition: width 5s;
+    -o-transition: width 5s;
+}
