@@ -35,13 +35,17 @@ body {
 
 
 .overlay:hover::after {
+    visibility: visible;
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    -o-transition: background-color 1s;
 }
 
 /* Navbar  */
@@ -182,7 +186,12 @@ main {
 }
 
 .cover:hover .play {
-    visibility: visible;
+    opacity: 1;
+    transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -moz-transition: opacity 1.5s;
+    -ms-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
 }
 
 .play {
@@ -192,7 +201,7 @@ main {
     color: #fff;
     left: 50%;
     z-index: 1;
-    visibility: hidden;
+    opacity: 0;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -600,6 +609,11 @@ i[class*="fa-play-circle"] {
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
 }
 
 .media_player_footer span {
@@ -629,6 +643,11 @@ i[class*="fa-play-circle"] {
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
 }
 
 /* Responsive */
